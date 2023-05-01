@@ -1,0 +1,8 @@
+file_format: "1"
+id: khonsu
+name: KHONSU
+type: shield
+url: https://github.com/alejandrogallo/khonsu-zmk
+requires: [nice_nano_v2]
+features:
+  - keys
