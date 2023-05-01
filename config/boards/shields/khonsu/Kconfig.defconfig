@@ -1,6 +1,6 @@
 if SHIELD_KHONSU
 
-  config ZMK_KEYBOARD_NAME
-      default "Khonsu Keyboard"
+    config ZMK_KEYBOARD_NAME
+        default "Khonsu Keyboard"
 
 endif
