@@ -13,6 +13,6 @@
 #
 ---
 include:
-  # - board: nice_nano_v2
-  - board: pro_micro
+  - board: nice_nano_v2
+  # - board: pro_micor
     shield: khonsu
