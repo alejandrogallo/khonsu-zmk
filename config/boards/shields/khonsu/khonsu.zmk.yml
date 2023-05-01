@@ -1,7 +1,0 @@
-file_format: "1"
-id: khonsu
-name: khonsu
-type: shield
-url: https://github.com/alejandrogallo/khonsu-zmk
-features:
-  - keys
