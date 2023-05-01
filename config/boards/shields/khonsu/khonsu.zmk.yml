@@ -1,0 +1,8 @@
+file_format: "1"
+id: khonsu
+name: Khonsy
+type: shield
+url: https://github.com/alejandrogallo/khonsu-zmk
+requires: [pro_micro]
+features:
+  - keys
