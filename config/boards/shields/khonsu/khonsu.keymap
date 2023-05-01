@@ -75,8 +75,8 @@
 
       movement_layer {
           bindings = <
-          &kp HOME &trans &kp PG_DN &kp PG_UP &trans   /*|*/ &kp RET &trans &trans &trans &kp DEL
-            &kp END &kp LEFT &kp DOWN &kp UP &kp RIGHT /*|*/ &trans &trans &trans &trans &kp INS
+          &kp HOME &trans &kp PG_DN &kp PG_UP &trans   /*|*/ &kp RET &bt BT_PRV &bt BT_CLR &bt BT_NEXT &kp DEL
+            &kp END &kp LEFT &kp DOWN &kp UP &kp RIGHT /*|*/ &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 3 &kp INS
                     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 /*|*/ &trans &trans &trans &trans &kp ESC
                                  &trans  &trans &trans /*|*/ &trans &trans &trans
           >;
