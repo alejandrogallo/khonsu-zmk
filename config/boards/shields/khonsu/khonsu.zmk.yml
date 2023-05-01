@@ -3,6 +3,6 @@ id: khonsu
 name: khonsu
 type: shield
 url: https://github.com/alejandrogallo/khonsu-zmk
-requires: [pro_micor]
+requires: [pro_micro]
 features:
   - keys
