@@ -34,6 +34,8 @@
         key-positions = <15 16>;
         bindings = <&kp BSPC>;
       };
+
+      // modifier combos
       combo_ctl {
         timeout-ms = <25>;
         key-positions = <17 18>;
@@ -42,12 +44,27 @@
       combo_alt {
         timeout-ms = <25>;
         key-positions = <27 28>;
-        bindings = <&kp RCTRL>;
+        bindings = <&kp LALT>;
       };
       combo_gui {
         timeout-ms = <25>;
         key-positions = <7 8>;
-        bindings = <&kp RCTRL>;
+        bindings = <&kp RGUI>;
+      };
+      combo_gui_l {
+        timeout-ms = <25>;
+        key-positions = <1 2>;
+        bindings = <&kp LGUI>;
+      };
+      combo_ctl_l {
+        timeout-ms = <25>;
+        key-positions = <11 12>;
+        bindings = <&kp LCTRL>;
+      };
+      combo_alt_l {
+        timeout-ms = <25>;
+        key-positions = <21 22>;
+        bindings = <&kp LALT>;
       };
     };
 
