@@ -41,9 +41,19 @@
         key-positions = <17 18>;
         bindings = <&kp RCTRL>;
       };
+      combo_ctl_l {
+        timeout-ms = <25>;
+        key-positions = <11 12>;
+        bindings = <&kp LCTRL>;
+      };
       combo_alt {
         timeout-ms = <25>;
         key-positions = <27 28>;
+        bindings = <&kp LALT>;
+      };
+      combo_alt_l {
+        timeout-ms = <25>;
+        key-positions = <21 22>;
         bindings = <&kp LALT>;
       };
       combo_gui {
@@ -56,15 +66,17 @@
         key-positions = <1 2>;
         bindings = <&kp LGUI>;
       };
-      combo_ctl_l {
+
+      // alt ctrl
+      combo_alt_ctrl_l {
         timeout-ms = <25>;
-        key-positions = <11 12>;
-        bindings = <&kp LCTRL>;
+        key-positions = <3 4>;
+        bindings = <&kp LA(LCTRL)>;
       };
-      combo_alt_l {
+      combo_alt_ctrl_r {
         timeout-ms = <25>;
-        key-positions = <21 22>;
-        bindings = <&kp LALT>;
+        key-positions = <5 6>;
+        bindings = <&kp LA(LCTRL)>;
       };
     };
 
@@ -73,10 +85,13 @@
 
         default_layer {
             bindings = <
-            &kp Q     &kp W     &kp E     &kp R     &kp T      /*|*/      &kp Y     &kp U     &kp I     &kp O    &kp P   
-            &kp A     &kp S     &kp D     &kp F     &kp G      /*|*/      &kp H     &kp J     &kp K     &kp L    &kp SEMI
-            &kp Z     &kp X     &kp C     &kp V     &kp B      /*|*/      &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH
-                                &mo MOVEMENT  &kp RSHFT &kp RCTRL   /*|*/     &kp SPACE   &mo SYMBOLS &kp RGUI
+            //  0         1         2         3         4                  /*|*/          5         6         7         8        9
+            &kp Q     &kp W     &kp E     &kp R     &kp T                  /*|*/      &kp Y     &kp U     &kp I     &kp O    &kp P   
+            // 10        11        12        13        14                  /*|*/         15        16        17        18       19
+            &kp A     &kp S     &kp D     &kp F     &kp G                  /*|*/      &kp H     &kp J     &kp K     &kp L    &kp SEMI
+            // 20        21        22        23        24                  /*|*/         25        26        27        28       29
+            &kp Z     &kp X     &kp C     &kp V     &kp B                  /*|*/      &kp N     &kp M     &kp COMMA &kp DOT  &kp FSLH
+                                &mo MOVEMENT  &mt RSHFT RET &mt RCTRL ESC  /*|*/     &kp SPACE   &mo SYMBOLS &kp RGUI
             >;
         };
 
@@ -92,9 +107,9 @@
 
       movement_layer {
           bindings = <
-          &kp HOME &trans &kp PG_DN &kp PG_UP &trans   /*|*/ &kp RET &bt BT_PRV &bt BT_CLR &bt BT_NXT &kp DEL
+          &kp HOME &trans &kp PG_DN &kp PG_UP &trans   /*|*/ &kp RET &bt BT_PRV &trans     &bt BT_NXT &kp DEL
             &kp END &kp LEFT &kp DOWN &kp UP &kp RIGHT /*|*/ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp INS
-                    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 /*|*/ &trans &trans &trans &trans &kp ESC
+                    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 /*|*/ &bt BT_CLR &trans &trans &trans &kp ESC
                                  &trans  &trans &trans /*|*/ &kp LALT &kp RSHFT &kp RCTRL
           >;
       };
