@@ -105,6 +105,7 @@
      :timeout-ms 25
      :keys ((R T)
             (Y U)
+            (RCTRL SPACE)
             (J K L)
             (S D F))
      :bindings (:kp (:l-alt LCTRL)))))
