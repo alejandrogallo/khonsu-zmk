@@ -2,7 +2,7 @@
   '(:left (((:kp Q)     (:kp W)     (:kp E)     (:kp R)     (:kp T))
            ((:kp A)     (:kp S)     (:kp D)     (:kp F)     (:kp G))
            ((:kp Z)     (:kp X)     (:kp C)     (:kp V)     (:kp B))
-           ((:na)        (:na)      (:mo Movement)  (:mt RSHFT RET) (:mt RCTRL ESC)))
+           ((:na)        (:na)      (:mo MOVEMENT)  (:mt RSHFT RET) (:mt RCTRL ESC)))
     :right (((:kp Y)     (:kp U)     (:kp I)     (:kp O)    (:kp P))
             ((:kp H)     (:kp J)     (:kp K)     (:kp L)    (:kp SEMI))
             ((:kp N)     (:kp M)     (:kp COMMA) (:kp DOT)  (:kp FSLH))
