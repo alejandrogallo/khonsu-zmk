@@ -88,6 +88,16 @@ timeout-ms = <25>;
 bindings = <&kp LA(LCTRL)>;
 key-positions = <5 6>;
 };
+combo_alt_ctrl_3 {
+timeout-ms = <25>;
+bindings = <&kp LA(LCTRL)>;
+key-positions = <16 17 18>;
+};
+combo_alt_ctrl_4 {
+timeout-ms = <25>;
+bindings = <&kp LA(LCTRL)>;
+key-positions = <11 12 13>;
+};
 };
 
 keymap {

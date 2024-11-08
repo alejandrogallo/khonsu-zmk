@@ -98,7 +98,9 @@
     (:name alt_ctrl
      :timeout-ms 25
      :keys ((R T)
-            (Y U))
+            (Y U)
+            (J K L)
+            (S D F))
      :bindings (:kp (:l-alt LCTRL)))))
 
 (defun kh-render-zmk-key (key)
