@@ -20,5 +20,5 @@
 (defvar kh-crkbd-keymap-alist (kh-crkbd-pad-keymap kh-keymap ))
 
 (kh-render-zmk-keymap-file kh-combos
-                           kh-crkbd-keymap-alist
+                           kh-keymap
                            "./config/boards/shields/corne/corne.keymap")

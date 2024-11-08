@@ -6,7 +6,6 @@ url: https://github.com/foostan/crkbd/
 requires: [pro_micro]
 features:
   - keys
-  - underglow
   - studio
 siblings:
   - corne_left
