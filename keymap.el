@@ -138,7 +138,7 @@
               (dolist (key keys)
                 (insert (format "combo_%s_%s {\n" name (cl-incf i)))
                 (insert (format "timeout-ms = <%s>;\n" timeout-ms))
-                (insert (format "bindings = <%s>\n;"
+                (insert (format "bindings = <%s>;\n"
                                 (kh-render-zmk-key bindings)))
                 (let (key-positions)
                   (dolist (k key)

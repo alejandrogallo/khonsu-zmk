@@ -10,82 +10,82 @@
 combos {
 combo_esc_1 {
 timeout-ms = <25>;
-bindings = <&kp ESC>
+bindings = <&kp ESC>;
 key-positions = <6 7>;
 };
 combo_esc_2 {
 timeout-ms = <25>;
-bindings = <&kp ESC>
+bindings = <&kp ESC>;
 key-positions = <3 2>;
 };
 combo_enter_1 {
 timeout-ms = <25>;
-bindings = <&kp RET>
+bindings = <&kp RET>;
 key-positions = <16 17>;
 };
 combo_enter_2 {
 timeout-ms = <25>;
-bindings = <&kp RET>
+bindings = <&kp RET>;
 key-positions = <12 13>;
 };
 combo_tab_1 {
 timeout-ms = <25>;
-bindings = <&kp TAB>
+bindings = <&kp TAB>;
 key-positions = <26 27>;
 };
 combo_tab_2 {
 timeout-ms = <25>;
-bindings = <&kp TAB>
+bindings = <&kp TAB>;
 key-positions = <22 23>;
 };
 combo_bkspc_1 {
 timeout-ms = <25>;
-bindings = <&kp BSPC>
+bindings = <&kp BSPC>;
 key-positions = <15 16>;
 };
 combo_bkspc_2 {
 timeout-ms = <25>;
-bindings = <&kp BSPC>
+bindings = <&kp BSPC>;
 key-positions = <13 14>;
 };
 combo_ctl_r_1 {
 timeout-ms = <25>;
-bindings = <&kp RCTRL>
+bindings = <&kp RCTRL>;
 key-positions = <17 18>;
 };
 combo_ctl_l_1 {
 timeout-ms = <25>;
-bindings = <&kp LCTRL>
+bindings = <&kp LCTRL>;
 key-positions = <11 12>;
 };
 combo_alt_1 {
 timeout-ms = <25>;
-bindings = <&kp LALT>
+bindings = <&kp LALT>;
 key-positions = <27 28>;
 };
 combo_alt_2 {
 timeout-ms = <25>;
-bindings = <&kp LALT>
+bindings = <&kp LALT>;
 key-positions = <21 22>;
 };
 combo_gui_r_1 {
 timeout-ms = <25>;
-bindings = <&kp RGUI>
+bindings = <&kp RGUI>;
 key-positions = <7 8>;
 };
 combo_gui_l_1 {
 timeout-ms = <25>;
-bindings = <&kp LGUI>
+bindings = <&kp LGUI>;
 key-positions = <1 2>;
 };
 combo_alt_ctrl_1 {
 timeout-ms = <25>;
-bindings = <&kp LA(LCTRL)>
+bindings = <&kp LA(LCTRL)>;
 key-positions = <3 4>;
 };
 combo_alt_ctrl_2 {
 timeout-ms = <25>;
-bindings = <&kp LA(LCTRL)>
+bindings = <&kp LA(LCTRL)>;
 key-positions = <5 6>;
 };
 };
