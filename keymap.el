@@ -33,27 +33,22 @@
             ((:bt BT_CLR) (:trans) (:trans) (:trans) (:kp ESC))
             ((:kp LALT) (:kp RSHFT) (:kp RCTRL) (:na) (:na)))))
 
+(defvar kh-zmk
+  '(:left (((:trans) (:bt BT_PRV) (:bt BT_CLR) (:bt BT_NXT) (:soft-off))
+           ((:bt BT_SEL 0) (:bt BT_SEL 1) (:bt BT_SEL 2) (:bt BT_SEL 3) (:bt BT_SEL 4))
+           ((:trans) (:trans) (:trans) (:trans) (:kp K_POWER))
+           ((:na) (:na) (:trans) (:trans) (:trans)))
+    :right (((:trans) (:trans) (:trans) (:trans) (:trans))
+            ((:trans) (:trans) (:trans) (:trans) (:trans))
+            ((:trans) (:trans) (:trans) (:trans) (:trans))
+            ((:trans) (:trans) (:trans) (:na) (:na)))))
+
 
 (defvar kh-keymap
   `(("default" . ,kh-default)
     ("symbols" . ,kh-symbols)
-    ("movement" . ,kh-movement)))
-
-(defun kh-render-zmk-layer (name layer)
-  (cl-destructuring-bind (&key left right) layer
-    (with-temp-buffer
-      (insert (format "%s_layer {\n" (downcase (format "%s" name))))
-      (insert "bindings = <\n")
-      (cl-loop for row in (cl-mapcar #'append left right)
-            do (progn
-                 (dolist (key row)
-                   (insert (kh-render-zmk-key key))
-                   (insert " "))
-                 (insert "\n")))
-      (insert "\n>;\n")
-      (insert "};\n")
-      (buffer-string))))
-
+    ("movement" . ,kh-movement)
+    ("zmk" . ,kh-zmk)))
 
 (defvar kh-combos
   '((:name esc
@@ -112,13 +107,29 @@
     (:name soft_off
      :timeout-ms 25
      :keys ((Z X C))
-     :bindings (:soft-off))
+     :bindings (:mo ZMK))
     (:name shift_alt_ctrl
      :timeout-ms 25
      :keys ((N M)
             (V B))
      ;; TODO: generalize
      :bindings (:kp (:l-alt "RS(LCTRL)")))))
+
+
+(defun kh-render-zmk-layer (name layer)
+  (cl-destructuring-bind (&key left right) layer
+    (with-temp-buffer
+      (insert (format "%s_layer {\n" (downcase (format "%s" name))))
+      (insert "bindings = <\n")
+      (cl-loop for row in (cl-mapcar #'append left right)
+            do (progn
+                 (dolist (key row)
+                   (insert (kh-render-zmk-key key))
+                   (insert " "))
+                 (insert "\n")))
+      (insert "\n>;\n")
+      (insert "};\n")
+      (buffer-string))))
 
 (defun kh-render-zmk-key (key)
   (pcase key
@@ -190,13 +201,6 @@
     (insert "\n};\n")
     (buffer-string)))
 
-(kh-render-zmk-combos kh-combos kh-default)
-(kh-render-zmk-layer "default" kh-default)
-(kh-render-zmk-layer "symbols" kh-symbols)
-(kh-render-zmk-layer "movement" kh-movement)
-
-
-(kh-render-zmk-keymap kh-keymap)
 
 (defun kh-render-zmk-keymap-file (combos layers-alist &optional outfile)
   (with-temp-buffer
@@ -206,8 +210,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define DEFAULT 0
 #define SYMBOLS 1
 #define MOVEMENT 2
+#define ZMK 3
 
 &soft_off {
   hold-time-ms = <5000>;
