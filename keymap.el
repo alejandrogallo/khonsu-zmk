@@ -134,6 +134,7 @@
            (flat-layer (cl-reduce #'append full-layer)))
       (with-temp-buffer
         (insert "combos {\n")
+        (insert "compatible = \"zmk,combos\";\n")
         (dolist (combo combos)
           (cl-destructuring-bind (&key name timeout-ms keys bindings) combo
             (let ((i 0))

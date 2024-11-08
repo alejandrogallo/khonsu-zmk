@@ -8,6 +8,7 @@
 #define MOVEMENT 2
 / {
 combos {
+compatible = "zmk,combos";
 combo_esc_1 {
 timeout-ms = <25>;
 bindings = <&kp ESC>;
