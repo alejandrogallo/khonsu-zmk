@@ -1,13 +1,7 @@
-/*
- * Copyright (c) 2020 Pete Johanson
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include "khorne.dtsi"
 
-&five_column_transform {
-    col-offset = <6>;
+&default_transform {
+    col-offset = <5>;
 };
 
 &kscan0 {
