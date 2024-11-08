@@ -1,6 +1,6 @@
 file_format: "1"
-id: corne
-name: Corne
+id: khorne
+name: Khorne
 type: shield
 url: https://github.com/foostan/crkbd/
 requires: [pro_micro]
@@ -8,5 +8,5 @@ features:
   - keys
   - studio
 siblings:
-  - corne_left
-  - corne_right
+  - khorne_left
+  - khorne_right

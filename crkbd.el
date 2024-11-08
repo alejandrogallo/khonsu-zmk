@@ -21,4 +21,4 @@
 
 (kh-render-zmk-keymap-file kh-combos
                            kh-keymap
-                           "./config/boards/shields/corne/corne.keymap")
+                           "./config/boards/shields/khorne/khorne.keymap")
