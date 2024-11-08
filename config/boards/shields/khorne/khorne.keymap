@@ -67,6 +67,11 @@ key-positions = <27 28>;
 combo_alt_2 {
 timeout-ms = <25>;
 bindings = <&kp LALT>;
+key-positions = <36 33>;
+};
+combo_alt_3 {
+timeout-ms = <25>;
+bindings = <&kp LALT>;
 key-positions = <21 22>;
 };
 combo_gui_r_1 {
@@ -92,9 +97,14 @@ key-positions = <5 6>;
 combo_alt_ctrl_3 {
 timeout-ms = <25>;
 bindings = <&kp LA(LCTRL)>;
-key-positions = <16 17 18>;
+key-positions = <34 35>;
 };
 combo_alt_ctrl_4 {
+timeout-ms = <25>;
+bindings = <&kp LA(LCTRL)>;
+key-positions = <16 17 18>;
+};
+combo_alt_ctrl_5 {
 timeout-ms = <25>;
 bindings = <&kp LA(LCTRL)>;
 key-positions = <11 12 13>;

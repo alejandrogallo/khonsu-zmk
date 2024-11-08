@@ -1,3 +1,8 @@
+(let (kh-defines)
+  (defun kh-define-key (newkey oldkey)
+    (push `(,newkey . oldkey)
+          kh-defines)))
+
 (defvar kh-default
   '(:left (((:kp Q)     (:kp W)     (:kp E)     (:kp R)     (:kp T))
            ((:kp A)     (:kp S)     (:kp D)     (:kp F)     (:kp G))
@@ -84,6 +89,7 @@
     (:name alt
      :timeout-ms 25
      :keys ((COMMA DOT)
+            (SYMBOLS RSHFT)
             (X C))
      :bindings (:kp LALT))
     (:name gui_r
