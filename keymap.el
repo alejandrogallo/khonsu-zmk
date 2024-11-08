@@ -108,7 +108,13 @@
             (RCTRL SPACE)
             (J K L)
             (S D F))
-     :bindings (:kp (:l-alt LCTRL)))))
+     :bindings (:kp (:l-alt LCTRL)))
+    (:name shift_alt_ctrl
+     :timeout-ms 25
+     :keys ((N M)
+            (V B))
+     ;; TODO: generalize
+     :bindings (:kp (:l-alt "RS(LCTRL)")))))
 
 (defun kh-render-zmk-key (key)
   (pcase key

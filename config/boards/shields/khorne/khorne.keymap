@@ -109,6 +109,16 @@ timeout-ms = <25>;
 bindings = <&kp LA(LCTRL)>;
 key-positions = <11 12 13>;
 };
+combo_shift_alt_ctrl_1 {
+timeout-ms = <25>;
+bindings = <&kp LA(RS(LCTRL))>;
+key-positions = <25 26>;
+};
+combo_shift_alt_ctrl_2 {
+timeout-ms = <25>;
+bindings = <&kp LA(RS(LCTRL))>;
+key-positions = <23 24>;
+};
 };
 
 keymap {
