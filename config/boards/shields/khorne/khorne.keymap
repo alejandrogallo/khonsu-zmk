@@ -6,6 +6,10 @@
 
 #define SYMBOLS 1
 #define MOVEMENT 2
+
+&soft_off {
+  hold-time-ms = <5000>;
+};
 / {
 combos {
 compatible = "zmk,combos";
@@ -108,6 +112,11 @@ combo_alt_ctrl_5 {
 timeout-ms = <25>;
 bindings = <&kp LA(LCTRL)>;
 key-positions = <11 12 13>;
+};
+combo_soft_off_1 {
+timeout-ms = <25>;
+bindings = <&soft_off>;
+key-positions = <20 21 22>;
 };
 combo_shift_alt_ctrl_1 {
 timeout-ms = <25>;

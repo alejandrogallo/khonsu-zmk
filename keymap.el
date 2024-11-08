@@ -109,6 +109,10 @@
             (J K L)
             (S D F))
      :bindings (:kp (:l-alt LCTRL)))
+    (:name soft_off
+     :timeout-ms 25
+     :keys ((Z X C))
+     :bindings (:soft-off))
     (:name shift_alt_ctrl
      :timeout-ms 25
      :keys ((N M)
@@ -122,6 +126,8 @@
       (kh-render-zmk-key `(:kp ,(format "LA(%s)" keyname))))
     (`(:kp ,keyname)
       (format "&kp %s" keyname))
+    (`(:soft-off)
+      "&soft_off")
     (`(:mo ,keyname)
       (format "&mo %s" keyname))
     (`(:trans)
@@ -202,6 +208,10 @@
 
 #define SYMBOLS 1
 #define MOVEMENT 2
+
+&soft_off {
+  hold-time-ms = <5000>;
+};
 ")
     (insert "/ {")
     (newline)
