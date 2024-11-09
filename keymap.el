@@ -38,7 +38,7 @@
            ((:bt BT_SEL 0) (:bt BT_SEL 1) (:bt BT_SEL 2) (:bt BT_SEL 3) (:bt BT_SEL 4))
            ((:trans) (:trans) (:trans) (:trans) (:kp K_POWER))
            ((:na) (:na) (:trans) (:trans) (:trans)))
-    :right (((:trans) (:trans) (:trans) (:trans) (:trans))
+    :right (((:to DEFAULT) (:trans) (:trans) (:trans) (:trans))
             ((:trans) (:trans) (:trans) (:trans) (:trans))
             ((:trans) (:trans) (:trans) (:trans) (:trans))
             ((:trans) (:trans) (:trans) (:na) (:na)))))
