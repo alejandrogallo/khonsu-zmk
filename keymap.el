@@ -45,10 +45,10 @@
 
 
 (defvar kh-keymap
-  `(("default" . ,kh-default)
-    ("symbols" . ,kh-symbols)
-    ("movement" . ,kh-movement)
-    ("zmk" . ,kh-zmk)))
+  `(("DEFAULT" . ,kh-default)
+    ("SYMBOLS" . ,kh-symbols)
+    ("MOVEMENT" . ,kh-movement)
+    ("ZMK" . ,kh-zmk)))
 
 (defvar kh-combos
   '((:name esc
@@ -84,7 +84,6 @@
     (:name alt
      :timeout-ms 25
      :keys ((COMMA DOT)
-            (SYMBOLS RSHFT)
             (X C))
      :bindings (:kp LALT))
     (:name gui_r
@@ -100,20 +99,37 @@
      :timeout-ms 25
      :keys ((R T)
             (Y U)
-            (RCTRL SPACE)
             (J K L)
             (S D F))
      :bindings (:kp (:l-alt LCTRL)))
-    (:name soft_off
+    (:name to_zmk
      :timeout-ms 25
      :keys ((Z X C))
      :bindings (:mo ZMK))
+    (:name shift_alt
+     :timeout-ms 25
+     :keys ((M COMMA DOT)
+            (X C V))
+     :bindings (:kp "RS(LALT)"))
+    (:name shift_gui
+     :timeout-ms 25
+     :keys ((U I O)
+            (W E R))
+     :bindings (:kp "RS(LGUI)"))
     (:name shift_alt_ctrl
      :timeout-ms 25
      :keys ((N M)
             (V B))
      ;; TODO: generalize
      :bindings (:kp (:l-alt "RS(LCTRL)")))))
+
+
+(defun kh-check-combos (combos)
+  (let ((keys (cl-reduce #'append (mapcar (lambda (x) (plist-get x :keys))
+                                          combos))))
+    (dolist (key keys)
+      (when (< 1 (cl-count key keys :test #'equal))
+        (error "Key combination %s is duplicated in combos" key)))))
 
 
 (defun kh-render-zmk-layer (name layer)
@@ -197,6 +213,12 @@
     (insert "\n};\n")
     (buffer-string)))
 
+(defun kh-render-layers-defines (layers-alist)
+  (with-temp-buffer
+    (cl-loop for (name . _) in layers-alist
+          for i from 0
+          do (insert (format "#define %s %s\n" name i)))
+    (buffer-string)))
 
 (defun kh-render-zmk-keymap-file (combos layers-alist &optional outfile)
   (with-temp-buffer
@@ -206,17 +228,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT 0
-#define SYMBOLS 1
-#define MOVEMENT 2
-#define ZMK 3
-
 &soft_off {
   hold-time-ms = <5000>;
 };
 ")
+
+    (insert (kh-render-layers-defines layers-alist))
     (insert "/ {")
     (newline)
+    (kh-check-combos combos)
     (insert (kh-render-zmk-combos combos (cdar layers-alist)))
     (newline)
     (insert (kh-render-zmk-keymap layers-alist))
