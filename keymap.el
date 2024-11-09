@@ -79,34 +79,34 @@
     ;; modifier combos
     (:name ctl_r
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((K L))
      :bindings (:kp RCTRL))
     (:name ctl_l
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((S D))
      :bindings (:kp LCTRL))
     (:name alt
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((COMMA DOT)
             (X C))
      :bindings (:kp LALT))
     (:name gui_r
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((I O))
      :bindings (:kp RGUI))
     (:name gui_l
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((W E))
      :bindings (:kp LGUI))
     ;; alt ctrl
     (:name alt_ctrl
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((R T)
             (Y U)
             (J K L)
@@ -118,19 +118,19 @@
      :bindings (:mo ZMK))
     (:name shift_alt
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((M COMMA DOT)
             (X C V))
      :bindings (:kp "RS(LALT)"))
     (:name shift_gui
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((U I O)
             (W E R))
      :bindings (:kp "RS(LGUI)"))
     (:name shift_alt_ctrl
      :timeout-ms 25
-     :slow-release true
+     :slow-release t
      :keys ((N M)
             (V B))
      ;; TODO: do it with macros
@@ -198,7 +198,7 @@
                 (insert (format "combo_%s_%s {\n" name (cl-incf i)))
                 (insert (format "timeout-ms = <%s>;\n" timeout-ms))
                 (when slow-release
-                  (insert (format "slow-release = true;\n")))
+                  (insert (format "slow-release;\n")))
                 (insert (format "bindings = <%s>;\n"
                                 (kh-render-zmk-key bindings)))
                 (let (key-positions)
