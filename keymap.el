@@ -51,7 +51,11 @@
     ("ZMK" . ,kh-zmk)))
 
 (defvar kh-combos
-  '((:name esc
+  '((:name power-off
+     :timeout-ms 25
+     :keys ((Q P))
+     :bindings (:kp K_POWER))
+    (:name esc
      :timeout-ms 25
      :keys ((U I)
             (R E))
@@ -75,28 +79,34 @@
     ;; modifier combos
     (:name ctl_r
      :timeout-ms 25
+     :slow-release true
      :keys ((K L))
      :bindings (:kp RCTRL))
     (:name ctl_l
      :timeout-ms 25
+     :slow-release true
      :keys ((S D))
      :bindings (:kp LCTRL))
     (:name alt
      :timeout-ms 25
+     :slow-release true
      :keys ((COMMA DOT)
             (X C))
      :bindings (:kp LALT))
     (:name gui_r
      :timeout-ms 25
+     :slow-release true
      :keys ((I O))
      :bindings (:kp RGUI))
     (:name gui_l
      :timeout-ms 25
+     :slow-release true
      :keys ((W E))
      :bindings (:kp LGUI))
     ;; alt ctrl
     (:name alt_ctrl
      :timeout-ms 25
+     :slow-release true
      :keys ((R T)
             (Y U)
             (J K L)
@@ -108,19 +118,22 @@
      :bindings (:mo ZMK))
     (:name shift_alt
      :timeout-ms 25
+     :slow-release true
      :keys ((M COMMA DOT)
             (X C V))
      :bindings (:kp "RS(LALT)"))
     (:name shift_gui
      :timeout-ms 25
+     :slow-release true
      :keys ((U I O)
             (W E R))
      :bindings (:kp "RS(LGUI)"))
     (:name shift_alt_ctrl
      :timeout-ms 25
+     :slow-release true
      :keys ((N M)
             (V B))
-     ;; TODO: generalize
+     ;; TODO: do it with macros
      :bindings (:kp (:l-alt "RS(LCTRL)")))))
 
 
@@ -178,11 +191,14 @@
         (insert "combos {\n")
         (insert "compatible = \"zmk,combos\";\n")
         (dolist (combo combos)
-          (cl-destructuring-bind (&key name timeout-ms keys bindings) combo
+          (cl-destructuring-bind (&key name timeout-ms keys bindings slow-release)
+              combo
             (let ((i 0))
               (dolist (key keys)
                 (insert (format "combo_%s_%s {\n" name (cl-incf i)))
                 (insert (format "timeout-ms = <%s>;\n" timeout-ms))
+                (when slow-release
+                  (insert (format "slow-release = true;\n")))
                 (insert (format "bindings = <%s>;\n"
                                 (kh-render-zmk-key bindings)))
                 (let (key-positions)
