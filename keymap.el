@@ -11,7 +11,7 @@
     :right (((:kp Y)     (:kp U)     (:kp I)     (:kp O)    (:kp P))
             ((:kp H)     (:kp J)     (:kp K)     (:kp L)    (:kp SEMI))
             ((:kp N)     (:kp M)     (:kp COMMA) (:kp DOT)  (:kp FSLH))
-            ((:mt LALT SPACE)   (:mo SYMBOLS) (:kp RGUI) (:na) (:na)))))
+            ((:kp SPACE)   (:mo SYMBOLS) (:kp RGUI) (:na) (:na)))))
 
 (defvar kh-symbols
   '(:left (((:kp EXCL) (:kp AT) (:kp HASH) (:kp DOLLAR) (:kp PIPE))
