@@ -77,12 +77,12 @@
             (F G))
      :bindings (:kp BSPC))
     ;; modifier combos
-    (:name ctl_r
+    (:name ctl-r
      :timeout-ms 25
      :slow-release t
      :keys ((K L))
      :bindings (:kp RCTRL))
-    (:name ctl_l
+    (:name ctl-l
      :timeout-ms 25
      :slow-release t
      :keys ((S D))
@@ -93,18 +93,18 @@
      :keys ((COMMA DOT)
             (X C))
      :bindings (:kp LALT))
-    (:name gui_r
+    (:name gui-r
      :timeout-ms 25
      :slow-release t
      :keys ((I O))
      :bindings (:kp RGUI))
-    (:name gui_l
+    (:name gui-l
      :timeout-ms 25
      :slow-release t
      :keys ((W E))
      :bindings (:kp LGUI))
     ;; alt ctrl
-    (:name alt_ctrl
+    (:name alt-ctrl
      :timeout-ms 25
      :slow-release t
      :keys ((R T)
@@ -112,29 +112,41 @@
             (J K L)
             (S D F))
      :bindings (:kp (:l-alt LCTRL)))
-    (:name to_zmk
+    (:name to-zmk
      :timeout-ms 25
      :keys ((Z X C))
      :bindings (:mo ZMK))
-    (:name shift_alt
+    (:name shift-alt
      :timeout-ms 25
      :slow-release t
      :keys ((M COMMA DOT)
             (X C V))
      :bindings (:kp "RS(LALT)"))
-    (:name shift_gui
+    (:name shift-gui
      :timeout-ms 25
      :slow-release t
      :keys ((U I O)
             (W E R))
      :bindings (:kp "RS(LGUI)"))
-    (:name shift_alt_ctrl
+    (:name shift-alt-ctrl
      :timeout-ms 25
      :slow-release t
      :keys ((N M)
             (V B))
      ;; TODO: do it with macros
-     :bindings (:kp (:l-alt "RS(LCTRL)")))))
+     :bindings (:kp (:l-alt "RS(LCTRL)")))
+    (:name shift-ctrl
+     :timeout-ms 25
+     :slow-release t
+     :keys ((J K L SEMI)
+            (A S D F))
+     :bindings (:kp "RS(LCTRL)"))
+    (:name shift
+     :timeout-ms 25
+     :slow-release t
+     :bindings (:kp RSHFT)
+     :keys ((L SEMI)
+            (A S)))))
 
 
 (defun kh-check-combos (combos)
@@ -195,7 +207,9 @@
               combo
             (let ((i 0))
               (dolist (key keys)
-                (insert (format "combo_%s_%s {\n" name (cl-incf i)))
+                (insert (replace-regexp-in-string "-"
+                                                  "_"
+                                                  (format "combo_%s_%s {\n" name (cl-incf i))))
                 (insert (format "timeout-ms = <%s>;\n" timeout-ms))
                 (when slow-release
                   (insert (format "slow-release;\n")))
@@ -262,7 +276,10 @@
       (when outfile
         (with-current-buffer (find-file-noselect outfile)
           (erase-buffer)
+          (c-mode)
           (insert code)
+          (indent-region (point-min)
+                         (point-max))
           (save-buffer)))
       code)))
 
