@@ -34,13 +34,13 @@
             ((:kp LALT) (:kp RSHFT) (:kp RCTRL) (:na) (:na)))))
 
 (defvar kh-zmk
-  '(:left (((:to DEFAULT) (:bt BT_PRV) (:bt BT_CLR) (:bt BT_NXT) (:soft-off))
-           ((:bt BT_SEL 0) (:bt BT_SEL 1) (:bt BT_SEL 2) (:bt BT_SEL 3) (:bt BT_SEL 4))
-           ((:trans) (:trans) (:trans) (:trans) (:kp K_POWER))
+  '(:left (((:to DEFAULT) (:trans) (:trans) (:trans) (:trans))
+           ((:trans) (:trans) (:trans) (:trans) (:trans))
+           ((:trans) (:trans) (:trans) (:trans) (:trans))
            ((:na) (:na) (:trans) (:trans) (:trans)))
-    :right (((:to DEFAULT) (:trans) (:trans) (:trans) (:trans))
-            ((:trans) (:trans) (:trans) (:trans) (:trans))
-            ((:trans) (:trans) (:trans) (:trans) (:trans))
+    :right (((:to DEFAULT) (:bt BT_PRV) (:bt BT_CLR) (:bt BT_NXT) (:soft-off))
+            ((:bt BT_SEL 0) (:bt BT_SEL 1) (:bt BT_SEL 2) (:bt BT_SEL 3) (:bt BT_SEL 4))
+            ((:trans) (:trans) (:trans) (:trans) (:kp K_POWER))
             ((:trans) (:trans) (:trans) (:na) (:na)))))
 
 
@@ -114,6 +114,7 @@
      :bindings (:kp (:l-alt LCTRL)))
     (:name to-zmk
      :timeout-ms 25
+     :slow-release t
      :keys ((Z X C))
      :bindings (:mo ZMK))
     (:name shift-alt
@@ -146,7 +147,12 @@
      :slow-release t
      :bindings (:kp RSHFT)
      :keys ((L SEMI)
-            (A S)))))
+            (A S)))
+    (:name thumb-test
+     :timeout-ms 25
+     :slow-release t
+     :keys ((ESC SPACE))
+     :bindings (:kp A))))
 
 
 (defun kh-check-combos (combos)
