@@ -43,7 +43,6 @@
             ((:trans) (:trans) (:trans) (:trans) (:kp K_POWER))
             ((:trans) (:trans) (:trans) (:na) (:na)))))
 
-
 (defvar kh-keymap
   `(("DEFAULT" . ,kh-default)
     ("SYMBOLS" . ,kh-symbols)
