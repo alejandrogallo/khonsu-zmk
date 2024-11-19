@@ -1,0 +1,35 @@
+{
+  "manufacturer": "Alejandro Gallo",
+  "keyboard_name": "luakhh",
+  "maintainer": "alejandrogallo",
+  "bootloader": "caterina",
+  "diode_direction": "COL2ROW",
+  "features": {
+    "bootmagic": false,
+    "command": false,
+    "console": false,
+    "extrakey": true,
+    "mousekey": true,
+    "nkro": false
+  },
+  "processor": "atmega32u4",
+  "url": "",
+  "usb": {
+    "device_version": "1.0.0",
+    "pid": "0xFEED",
+    "vid": "0xFAAD"
+  },
+  "combo": {
+    "term": 50
+  },
+  "tapping": {
+    "term": 170
+  },
+  "mouse_key": {
+    "enabled": true,
+    "delay": 9,
+    "interval": 29,
+    "time_to_max": 9,
+    "max_speed": 9
+  }
+}
