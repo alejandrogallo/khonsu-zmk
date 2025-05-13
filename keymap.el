@@ -30,7 +30,7 @@
            ((:na) (:na) ( :trans)  (:trans) (:trans)))
     :right (((:to ZMK) (:bt BT_PRV) (:trans)     (:bt BT_NXT) (:kp DEL))
             ((:bt BT_SEL 0) (:bt BT_SEL 1) (:bt BT_SEL 2) (:bt BT_SEL 3) (:kp INS))
-            ((:bt BT_CLR) (:trans) (:trans) (:trans) (:kp ESC))
+            ((:bt BT_CLR) (:bt BT_SEL 4) (:trans) (:trans) (:kp ESC))
             ((:kp LALT) (:kp RSHFT) (:kp RCTRL) (:na) (:na)))))
 
 (defvar kh-zmk
