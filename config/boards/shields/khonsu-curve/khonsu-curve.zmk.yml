@@ -1,6 +1,6 @@
 file_format: "1"
-id: khonsu
-name: khonsu
+id: khonsu_curve
+name: khonsu_curve
 type: shield
 url: https://github.com/alejandrogallo/khonsu-zmk
 requires: [pro_micro]

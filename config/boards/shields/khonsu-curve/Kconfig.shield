@@ -1,2 +1,2 @@
-config SHIELD_KHONSU
-    def_bool $(shields_list_contains,khonsu)
+config SHIELD_KHONSU_CURVE
+    def_bool $(shields_list_contains,khonsu_curve)
