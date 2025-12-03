@@ -3,7 +3,7 @@ include:
   - board: nice_nano_v2
     shield: khonsu
   - board: nice_nano_v2
-    shield: khonsu-curve
+    shield: khonsu_curve
   - board: nice_nano_v2
     shield: khorne_left
   - board: nice_nano_v2
