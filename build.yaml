@@ -1,12 +1,12 @@
 
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: khonsu
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: khonsu_curve
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: khorne_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: khorne_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
