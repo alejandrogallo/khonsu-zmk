@@ -1,6 +1,6 @@
 if SHIELD_KHONSU_CURVE
 
 config ZMK_KEYBOARD_NAME
-    default "The Khonsu Curve"
+    default "CurveKhonsu"
 
 endif
